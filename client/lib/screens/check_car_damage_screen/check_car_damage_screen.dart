@@ -112,6 +112,9 @@ class _CheckCarDamageScreenState extends State<CheckCarDamageScreen>
             },
           );
         }
+        // if (_videoPlayerController.value.isPlaying) {
+        //   _timeChecker();
+        // }
       },
     );
   }
@@ -520,7 +523,7 @@ class _CheckCarDamageScreenState extends State<CheckCarDamageScreen>
                                           });
                                         }
                                       },
-                                      child: _isVisibleSPBTN
+                                      child: (_isVisibleSPBTN && _isVisible)
                                           ? Stack(
                                               alignment: Alignment.center,
                                               children: [
@@ -662,8 +665,6 @@ class _CheckCarDamageScreenState extends State<CheckCarDamageScreen>
                                     MaterialPageRoute(
                                       builder: (context) => VideoFullScreen(
                                         filePath: widget.filePath,
-                                        carDamagesAllList: carDamagesAllList,
-                                        selectedIndexList: selectedIndexList,
                                         timeStamp: _videoPlayerController
                                             .value.position,
                                       ),
